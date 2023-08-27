@@ -1,5 +1,6 @@
 package de.yggdrasil.core.localisation;
 
+import net.minestom.server.entity.Player;
 import de.yggdrasil.core.localisation.sesseion.LocalizerSession;
 
 public class Localizer {
