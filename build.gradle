@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+    id("io.freefair.lombok") version "8.1.0"
+}
+
+group 'de.yggdrasil.core'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.reflections:reflections:0.10.2'
+    implementation 'com.github.Minestom:Minestom:c5047b8037'
+
+    // Logging
+    implementation 'org.apache.logging.log4j:log4j-api:2.20.0'
+    implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+
+    //DAL
+    implementation project(path: ':dal')
+
+    // Tests only
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.10.0'
+}
+
+test {
+    useJUnitPlatform()
+    testLogging {
+        exceptionFormat = 'full'
+    }
+}
