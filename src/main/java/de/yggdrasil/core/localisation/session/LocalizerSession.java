@@ -1,14 +1,23 @@
 package de.yggdrasil.core.localisation.session;
 
-import java.util.UUID;
 import net.minestom.server.entity.Player;
 
 public class LocalizerSession {
 
-    private final UUID targetUUID;
+    private final Player target;
+    private final String locale;
 
-    public LocalizerSession(Player target){
-        targetUUID = target.getUuid();
+    public LocalizerSession(Player target, String locale){
+        this.target = target;
+        this.locale = locale;
+    }
+
+    public Player getTarget() {
+        return target;
+    }
+
+    public String getLocale() {
+        return locale;
     }
 
 }
